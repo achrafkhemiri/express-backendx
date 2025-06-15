@@ -1,17 +1,17 @@
 pipeline {
-  agent any          // Exécuter sur n’importe quel agent Jenkins (machine disponible)
+  agent any
 
   stages {
     stage('Install & Test') {
       steps {
-        bat 'npm install'   // Installe les dépendances du projet Node.js
-        bat 'npm test'      // Exécute les tests avec Jest (ou autre)
+        sh 'npm install'   // au lieu de bat
+        sh 'npm test'      // au lieu de bat
       }
     }
 
     stage('Build Docker Image') {
       steps {
-        bat 'docker build -t express-backend .'   // Crée une image Docker locale nommée "express-backend"
+        sh 'docker build -t express-backend .'  // au lieu de bat
       }
     }
   }
