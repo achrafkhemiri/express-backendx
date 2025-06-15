@@ -1,6 +1,7 @@
 pipeline {
-  agent any
-
+  agent {
+    docker { image 'node:20' }
+  }
   stages {
     stage('Install & Test') {
       steps {
