@@ -1,17 +1,17 @@
 pipeline {
-  agent any
-
+  agent {
+    docker { image 'node:20' }
+  }
   stages {
     stage('Install & Test') {
       steps {
-        sh 'npm install'   // au lieu de bat
-        sh 'npm test'      // au lieu de bat
+        sh 'npm install'
+        sh 'npm test'
       }
     }
-
     stage('Build Docker Image') {
       steps {
-        sh 'docker build -t express-backend .'  // au lieu de bat
+        sh 'docker build -t express-backend .'
       }
     }
   }
