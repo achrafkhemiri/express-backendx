@@ -7,7 +7,7 @@ app.use(express.json());
 app.use('/api/tasks', tasksRoutes);
 // Ajoute la route d'accueil ici
 app.get('/', (req, res) => {
-  res.send('Bienvenue sur l’API Express ! Utilisez /api/tasks');
+  res.send('Bienvenue sur a l’API Express ! Utilisez /api/tasks');
 });
 
 module.exports = app;
